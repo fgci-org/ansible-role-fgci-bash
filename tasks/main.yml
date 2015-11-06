@@ -1,2 +1,8 @@
 ---
 # tasks file for ansible-role-fgci-bash/
+#
+
+- name: copy FGCI bash profile scripts
+  copy: src={{ item }} dest=/etc/profile.d owner=root mode=0644
+  with_fileglob:
+    - "../files/*sh"
