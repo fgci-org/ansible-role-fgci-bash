@@ -10,6 +10,9 @@
   when: chgIntGW is defined
   delegate_to: install
 
+- name: restart dhcpd
+  service: name=dhcpd state=restarted
+  delegate_to: install
 
 - name: copy FGCI bash profile scripts
   copy: src={{ item }} dest=/etc/profile.d owner=root mode=0644
