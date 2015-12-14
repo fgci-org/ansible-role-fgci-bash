@@ -2,18 +2,6 @@
 # tasks file for ansible-role-fgci-bash/
 #
 
-#
-# Doing this here because it's FGCI layout specific
-
-- name: setting Login as Internal network gateway
-  lineinfile: backup=yes dest=/etc/dhcp/dhcpd.conf regexp="  option routers 10.1.1.2;" line="  option routers 10.1.1.4;"
-  when: chgIntGW is defined
-  delegate_to: install
-
-- name: restart dhcpd
-  service: name=dhcpd state=restarted
-  delegate_to: install
-
 - name: copy FGCI bash profile scripts
   copy: src={{ item }} dest=/etc/profile.d owner=root mode=0644
   with_fileglob:
