@@ -1,2 +1,7 @@
 ---
 # defaults file for ansible-role-fgci-bash/
+
+bash_script_copy_these:
+ - hist.sh
+bash_script_copy_all: True
+

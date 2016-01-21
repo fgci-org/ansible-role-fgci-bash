@@ -6,3 +6,9 @@
   copy: src={{ item }} dest=/etc/profile.d owner=root mode=0644
   with_fileglob:
     - "../files/*sh"
+  when: bash_script_copy_all
+
+- name: copy specified bash profile scripts
+  copy: src={{ item }} dest=/etc/profile.d owner=root mode=0644
+  with_items: bash_script_copy_these
+  when: bash_script_copy_all == False
