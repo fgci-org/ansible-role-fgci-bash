@@ -12,3 +12,14 @@
   copy: src={{ item }} dest=/etc/profile.d owner=root mode=0644
   with_items: bash_script_copy_these
   when: bash_script_copy_all == False
+
+- name: copy CSC LUA script
+  copy: src={{ item }} dest=/etc/profile.d owner=root mode=0644
+  with_fileglob:
+    - "../files/*lua"
+  when: lua_script_copy_all
+
+- name: copy specified CSC LUA script
+  copy: src={{ item }} dest=/etc/profile.d owner=root mode=0644
+  with_items: lua_script_copy_these
+  when: lua_script_copy_all == False

@@ -5,3 +5,7 @@ bash_script_copy_these:
  - hist.sh
 bash_script_copy_all: True
 
+lua_script_copy_all: True
+lua_script_copy_these:
+ - SitePackage.sh
+
