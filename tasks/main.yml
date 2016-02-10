@@ -22,4 +22,4 @@
 - name: copy specified CSC LUA script
   copy: src={{ item }} dest=/etc/profile.d owner=root mode=0644
   with_items: lua_script_copy_these
-  when: lua_script_copy_all == False
+  when: lua_script_copy_all == False and lua_script_copy_these.0 != ""
