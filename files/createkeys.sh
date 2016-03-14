@@ -1,4 +1,8 @@
 #!/bin/bash
+if [ "$USER" == "root" ]; then
+        #Skip this for root user
+        return 0
+fi
 #only do this if the home directory is writeable (i.e. not for grid users)
 if [ -w $HOME ] ; then
  if [ ! -e $HOME/.ssh ] ; then
