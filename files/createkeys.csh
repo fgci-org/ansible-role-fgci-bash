@@ -18,18 +18,18 @@ if ( -w $HOME ) then
   chmod 700 $HOME/.ssh
  endif
  
- if ( ! -f $HOME/.ssh/id_rsa ) then
+ if ( ! -f $HOME/.ssh/id_ed25519 ) then
   #Create the user SSH keys if they're missing
   echo "This seems to be your first login"
   echo "SSH keys will be created for you so you can ssh in the cluster"
-  ssh-keygen -t rsa  -f $HOME/.ssh/id_rsa -N ""
+  ssh-keygen -t ed25519  -f $HOME/.ssh/id_ed25519 -N ""
  
   if ( $status != 0 ) then
    echo "Could not create ssh keys. Please contact your local admin" >&2
    exit 1
   endif
  
-  cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
+  cat $HOME/.ssh/id_ed25519.pub >> $HOME/.ssh/authorized_keys
   chmod 644 $HOME/.ssh/authorized_keys
   echo "So! That didn't take too long, did it?"
  endif
