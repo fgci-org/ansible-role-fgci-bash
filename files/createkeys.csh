@@ -1,5 +1,10 @@
 #!/bin/tcsh
 #only do this if the homedirectory is writeable, i.e. not for grid users
+if ( $USER == "root" ) then
+	# Do not generate an ssh key for root in /root/ on every compute node
+	return 0
+endif
+
 if ( -w $HOME ) then
  if ( ! -e $HOME/.ssh ) then
   #If there's no ssh directory, create it
