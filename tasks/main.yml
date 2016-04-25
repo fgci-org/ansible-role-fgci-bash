@@ -10,7 +10,7 @@
 
 - name: copy specified bash profile scripts
   copy: src={{ item }} dest=/etc/profile.d owner=root mode=0644
-  with_items: bash_script_copy_these
+  with_items: "{{ bash_script_copy_these }}"
   when: bash_script_copy_all == False
 
 - name: template FGCI bash profile scripts
@@ -27,5 +27,5 @@
 
 - name: copy specified CSC LUA script
   copy: src={{ item }} dest=/etc/profile.d owner=root mode=0644
-  with_items: lua_script_copy_these
+  with_items: "{{ lua_script_copy_these }}"
   when: lua_script_copy_all == False and lua_script_copy_these.0 != ""
