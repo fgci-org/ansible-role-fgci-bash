@@ -1,4 +1,6 @@
 #!/bin/bash
 # Set the manpath explicitly, so MANPATH overwrites won't hide system man pages
 
-export MANPATH=$MANPATH:`man -w` 
+if mancmd=$(command -v man); then
+    export MANPATH=$MANPATH:$(${mancmd} -w)
+fi
