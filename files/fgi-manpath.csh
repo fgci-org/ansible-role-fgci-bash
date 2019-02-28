@@ -4,5 +4,7 @@
 if ! $?MANPATH then
  setenv MANPATH
 endif
-setenv MANPATH "${MANPATH}:"`man -w` 
+if (`where man` != "") then
+    setenv MANPATH "${MANPATH}:"`man -w`
+endif
 
