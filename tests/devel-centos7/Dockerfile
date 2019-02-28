@@ -14,7 +14,7 @@ RUN yum clean all && \
     sed -i -e 's/^Defaults.*requiretty/Defaults    !requiretty/' -e 's/^%wheel.*ALL$/%wheel    ALL=(ALL)    NOPASSWD: ALL/' /etc/sudoers && \
     yum -y install git python-pip && \
     pip install --upgrade pip && \
-    pip install passlib dnspython jinja2 && \
+    pip install passlib dnspython jinja2 pyyaml && \
     sh -c 'yum -y remove libffi-devel || yum -y --setopt=tsflags=noscripts remove libffi-devel' && \
     yum -y remove $(rpm -qa "*-devel") && \
     yum -y groupremove "Development tools" && \
