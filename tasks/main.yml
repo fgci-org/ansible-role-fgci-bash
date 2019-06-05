@@ -6,7 +6,7 @@
   copy: src={{ item }} dest=/etc/profile.d owner=root mode=0644
   with_fileglob:
     - "../files/*sh"
-  when: bash_script_copy_all
+  when: bash_script_copy_all|bool
 
 - name: copy specified bash profile scripts
   copy: src={{ item }} dest=/etc/profile.d owner=root mode=0644
@@ -17,13 +17,13 @@
   template: src={{ item }} dest=/etc/profile.d owner=root mode=0644
   with_fileglob:
     - "../templates/*sh"
-  when: bash_script_copy_all
+  when: bash_script_copy_all|bool
 
 - name: copy CSC LUA script
   copy: src={{ item }} dest=/etc/profile.d owner=root mode=0644
   with_fileglob:
     - "../files/*lua"
-  when: lua_script_copy_all
+  when: lua_script_copy_all|bool
 
 - name: copy specified CSC LUA script
   copy: src={{ item }} dest=/etc/profile.d owner=root mode=0644
