@@ -9,7 +9,7 @@ By default it copies in:
 Does things like:
  - generate passwordless ssh keys for users
  - changes $MANPATH
- - installs a lmod_log.sh to log lmod module usage
+ - installs a lmod\_log.sh to log lmod module usage
  - changes modules path
 
 # Variables

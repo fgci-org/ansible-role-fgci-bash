@@ -10,5 +10,5 @@ bash_modules_path: "/cvmfs/fgi.csc.fi/modules/el7/all"
 
 lua_script_copy_all: True # disable by setting copy_all to false and copy_these to []
 lua_script_copy_these:
- - SitePackage.sh
+ - SitePackage.lua
 
