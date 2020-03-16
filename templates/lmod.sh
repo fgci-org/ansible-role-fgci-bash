@@ -7,3 +7,8 @@ export LMOD_PAGER=/bin/less
 # After upgrade to Lmod 8.2.7 need to set this, otherwise ml avail and
 # ml spider fail.
 export LMOD_FAST_TCL_INTERP=no
+
+{% if lmod_admin_file is defined %}
+# define custom path for adminfile. Used to e.g. deprecate modules
+export LMOD_ADMIN_FILE={{ lmod_admin_file }}
+{% endif %}
