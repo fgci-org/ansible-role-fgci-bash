@@ -12,3 +12,8 @@ export LMOD_FAST_TCL_INTERP=no
 # define custom path for adminfile. Used to e.g. deprecate modules
 export LMOD_ADMIN_FILE={{ lmod_admin_file }}
 {% endif %}
+
+{% if lmod_modulerc_file is defined %}
+# define custom path for modulerc file. Used to e.g. hide modules
+export LMOD_MODULERCFILE={{ lmod_modulerc_file }}
+{% endif %}
