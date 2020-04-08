@@ -6,7 +6,7 @@ bash_script_copy_these:
 bash_script_copy_all: True
 
 # This is added after MODULEPATH=$MODULEPATH
-bash_modules_path: "/cvmfs/fgi.csc.fi/modules/el7/all"
+bash_modules_path: "/cvmfs/fgi.csc.fi/modules/el7/all:/cvmfs/fgi.csc.fi/apps/el7/aalto/spack/lmod/linux-centos7-x86_64/all:/cvmfs/fgi.csc.fi/apps/el7/aalto/spack/lmod/linux-centos7-westmere/all"
 
 lua_script_copy_all: True # disable by setting copy_all to false and copy_these to []
 lua_script_copy_these:
